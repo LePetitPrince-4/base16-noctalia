@@ -22,8 +22,8 @@ jobs:
           repository: tinted-theming/schemes
           path: schemes
 
-      - name: Base16 Builder Go
-        uses: tinted-theming/base16-builder-go@v0.3.0
+      - name: Tinted Builder Rust
+        uses: tinted-theming/tinted-builder-rust@v0.21.0
         with:
           path: schemes
 
