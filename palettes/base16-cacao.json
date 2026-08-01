@@ -1,0 +1,95 @@
+{
+  "dark": {
+    "mPrimary": "#a89ad0",
+    "mOnPrimary": "#f4e6d6",
+    "mSecondary": "#74c8b0",
+    "mOnSecondary": "#f4e6d6",
+    "mTertiary": "#e8a84a",
+    "mOnTertiary": "#f4e6d6",
+    "mError": "#e0705c",
+    "mOnError": "#160f0c",
+    "mSurface": "#160f0c",
+    "mOnSurface": "#e8d6c4",
+    "mSurfaceVariant": "#241913",
+    "mOnSurfaceVariant": "#af9b8b",
+    "mOutline": "#3a281e",
+    "mShadow": "#160f0c",
+    "mHover": "#3a281e",
+    "mOnHover": "#c77b4a",
+    "terminal": {
+      "foreground": "#e8d6c4",
+      "background": "#160f0c",
+      "normal": {
+        "black": "#160f0c",
+        "red": "#e0705c",
+        "green": "#9ac97a",
+        "yellow": "#e8a84a",
+        "blue": "#a89ad0",
+        "magenta": "#ce8ab0",
+        "cyan": "#74c8b0",
+        "white": "#e8d6c4"
+      },
+      "bright": {
+        "black": "#766052",
+        "red": "#e0705c",
+        "green": "#9ac97a",
+        "yellow": "#e8a84a",
+        "blue": "#a89ad0",
+        "magenta": "#ce8ab0",
+        "cyan": "#74c8b0",
+        "white": "#e8d6c4"
+      },
+      "cursor": "#e8d6c4",
+      "cursorText": "#160f0c",
+      "selectionFg": "#3a281e",
+      "selectionBg": "#e8d6c4"
+    }
+  },
+  "light": {
+"mPrimary": "#a89ad0",
+    "mOnPrimary": "#160f0c",
+    "mSecondary": "#74c8b0",
+    "mOnSecondary": "#160f0c",
+    "mTertiary": "#e8a84a",
+    "mOnTertiary": "#160f0c",
+    "mError": "#e0705c",
+    "mOnError": "#160f0c",
+    "mSurface": "#160f0c",
+    "mOnSurface": "#e8d6c4",
+    "mSurfaceVariant": "#241913",
+    "mOnSurfaceVariant": "#af9b8b",
+    "mOutline": "#3a281e",
+    "mShadow": "#160f0c",
+    "mHover": "#3a281e",
+    "mOnHover": "#c77b4a",
+    "terminal": {
+      "foreground": "#e8d6c4",
+      "background": "#160f0c",
+      "normal": {
+        "black": "#160f0c",
+        "red": "#e0705c",
+        "green": "#9ac97a",
+        "yellow": "#e8a84a",
+        "blue": "#a89ad0",
+        "magenta": "#ce8ab0",
+        "cyan": "#74c8b0",
+        "white": "#e8d6c4"
+      },
+      "bright": {
+        "black": "#766052",
+        "red": "#e0705c",
+        "green": "#9ac97a",
+        "yellow": "#e8a84a",
+        "blue": "#a89ad0",
+        "magenta": "#ce8ab0",
+        "cyan": "#74c8b0",
+        "white": "#e8d6c4"
+      },
+      "cursor": "#e8d6c4",
+      "cursorText": "#160f0c",
+      "selectionFg": "#3a281e",
+      "selectionBg": "#e8d6c4"
+    }
+
+  }
+}
