@@ -2,21 +2,9 @@
 
 This is a tinted-theming set for the [noctalia desktop shell](https://github.com/noctalia-dev/noctalia)
 
-## Tinty Usage
+## Basic Usage
 
-Add the following toml settings to your [Tinty] `~/.config/tinted-theming/tinty/config.toml` file:
-
-```toml
-[[items]]
-path = "https://github.com/LePetitPrince-4/base16-noctalia"
-name = "noctalia"
-themes-dir = "palettes"
-hook = "cp -f $TINTY_THEME_FILE_PATH ~/.config/noctalia/palettes/tinty.json && noctalia msg color-scheme-set custom tinty"
-```
-
-## Download Usage
-
-If you aren't using tinty you can also download the theme you want and copy it into your `~/config/noctalia/palettes/` directory
+download the theme you want and copy it into your `~/config/noctalia/palettes/` directory
 
 then you can either
 
@@ -30,11 +18,17 @@ custom_palette = "base16-ayu-dark"
 source = "custom"
 ```
 
-## Team
+## Tinty Usage
 
-This theme is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/tinted-theming/YOUR_PROJECT_HERE/graphs/contributors).
+Add the following toml settings to your [Tinty] `~/.config/tinted-theming/tinty/config.toml` file:
 
-|| [![LePetitPrince-4](https://github.com/LePetitPrince-4.png?size=100)](https://github.com/LePetitPrince-4) |
+```toml
+[[items]]
+path = "https://github.com/LePetitPrince-4/base16-noctalia"
+name = "noctalia"
+themes-dir = "palettes"
+hook = "cp -f $TINTY_THEME_FILE_PATH ~/.config/noctalia/palettes/tinty.json && noctalia msg color-scheme-set custom tinty"
+```
 
 ## Community
 
