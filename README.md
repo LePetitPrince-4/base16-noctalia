@@ -1,26 +1,46 @@
-# tinted-theming-project-template <img alt="Color wheel" src="https://raw.githubusercontent.com/tinted-theming/home/refs/heads/main/color_wheel.png" width="100" align="right" style="padding-top:0.6rem;">
+# base16-noctalia <img alt="Color wheel" src="https://raw.githubusercontent.com/tinted-theming/home/refs/heads/main/color_wheel.png" width="100" align="right" style="padding-top:0.6rem;">
 
-Use this template for new Tinted Theming / Base16 / Base24 projects.
-ADD OVERVIEW HERE.
+This is a tinted-theming set for the [noctalia desktop shell](https://github.com/noctalia-dev/noctalia)
 
+## Tinty Usage
 
-## Install
+Add the following toml settings to your [Tinty] `~/.config/tinted-theming/tinty/config.toml` file:
 
-ADD INSTALL INSTRUCTIONS/NOTES HERE.
+```toml
+[[items]]
+path = "https://github.com/LePetitPrince-4/base16-noctalia"
+name = "noctalia"
+themes-dir = "palettes"
+hook = "cp -f $TINTY_THEME_FILE_PATH ~/.config/noctalia/palettes/tinty.json && noctalia msg color-scheme-set custom tinty"
+```
+
+## Download Usage
+
+If you aren't using tinty you can also download the theme you want and copy it into your `~/config/noctalia/palettes/` directory
+
+then you can either
+
+1. set the custom theme in the UI
+2. run `noctalia msg color-scheme-set custom base16-ayu-dark`
+3. add the following to your [noctalia settings] (<https://docs.noctalia.dev/v5/configuration/>)
+
+```toml
+[theme]
+custom_palette = "base16-ayu-dark"
+source = "custom"
+```
 
 ## Team
 
 This theme is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/tinted-theming/YOUR_PROJECT_HERE/graphs/contributors).
 
-| [![Jamy](https://github.com/jamygolden.png?size=100)](https://github.com/JamyGolden) | [![YOUR_NAME_HERE](https://github.com/YOUR_NAME_HERE.png?size=100)](https://github.com/YOUR_NAME_HERE) |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| [Jamy](https://github.com/JamyGolden)                                                | [YOUR_NAME_HERE](https://github.com/YOUR_NAME_HERE)                                                    |
+|| [![LePetitPrince-4](https://github.com/LePetitPrince-4.png?size=100)](https://github.com/LePetitPrince-4) |
 
 ## Community
 
-  * [Tinted Theming Home](https://github.com/tinted-theming/home)
-  * Have something you want to discuss, but you're not sure it warrants an issue? Feel free to stop by
-    [#tinted-theming:matrix.org](https://matrix.to/#/#tinted-theming:matrix.org) on [Matrix](https://matrix.org/).
+- [Tinted Theming Home](https://github.com/tinted-theming/home)
+- Have something you want to discuss, but you're not sure it warrants an issue? Feel free to stop by
+  [#tinted-theming:matrix.org](https://matrix.to/#/#tinted-theming:matrix.org) on [Matrix](https://matrix.org/).
 
 ## License
 
