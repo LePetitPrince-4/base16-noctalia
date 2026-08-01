@@ -1,18 +1,39 @@
-name: Update with the latest tinted-theming colorschemes
+name: Update themes
+
 on:
+  # trigger on template changes
   push:
-    branches:
-      - main
     paths:
-      - "templates/*"
-  workflow_dispatch:
+      - templates/**
+  # trigger on every saturday at 00:00
   schedule:
-    - cron: "0 0 * * *" # https://crontab.guru/every-day
+    - cron: "0 0 * * 6"
+  # manual trigger
+  workflow_dispatch:
 
 jobs:
-  build-and-commit:
-    uses: "tinted-theming/home/.github/workflows/shared-build-template-and-commit-themes.yml@main"
-    secrets:
-      token: ${{ secrets.BOT_ACCESS_TOKEN }}
-    with:
-      ref: ${{ github.head_ref }}
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: tinted-theming/schemes
+          path: schemes
+
+      - name: Base16 Builder Go
+        uses: tinted-theming/base16-builder-go@v0.3.0
+        with:
+          path: schemes
+
+      - name: commit & push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -r schemes
+          git diff --quiet || (
+            git add . 
+            git commit -m "fix: update themes"
+            git push
+          )
