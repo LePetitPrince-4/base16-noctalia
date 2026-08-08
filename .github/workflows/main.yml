@@ -12,28 +12,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  run:
+    runs-on: "ubuntu-latest"
     steps:
-      - uses: actions/checkout@v7
+      - name: "Fetch the repository code"
+        uses: "actions/checkout@9a9194f87191a7e9055e3e9b95b8cfb13023bb08" # 4.1.7
         with:
-          ref: ${{ github.head_ref }}
-          # Value already defaults to true, but `persist-credentials` is required to push new commits to the repository.
-          persist-credentials: true
+          token: ${{ secrets.token }}
+          ref: ${{ inputs.ref }}
 
-     
+      - name: "Install tinted-builder-rust"
+        uses: "jaxxstorm/action-install-gh-release@v1.10.0"
+        with: # Get the latest release
+          repo: "tinted-theming/tinted-builder-rust"
 
-      - name: Tinted Builder Rust
-        uses: tinted-theming/tinted-builder-rust@v0.21.0
-        with:
-          path: schemes
-          
       - name: "Update schemes"
         run: |
           tinted-builder-rust sync
           tinted-builder-rust build .
-          
-      - name: create Commit
-        uses: stefanzweifel/git-auto-commit-action@v7
+
+      - name: "Commit the changes, if any"
+        uses: "stefanzweifel/git-auto-commit-action@be823a7e51f116fecebc222b8307716921375992" # 5.0.1
         with:
-            commit_message: creating new schemes
+          commit_message: "Update with the latest tinted-theming colorschemes [skip ci]"
+          branch: ${{ inputs.ref }}
+          commit_user_name: "tinted-theming-bot"
+          commit_user_email: "tintedtheming@proton.me"
+          commit_author: "tinted-theming-bot <tintedtheming@proton.me>"
