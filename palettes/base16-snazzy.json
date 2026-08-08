@@ -46,7 +46,7 @@
     }
   },
   "light": {
-"mPrimary": "#57c7ff",
+    "mPrimary": "#57c7ff",
     "mOnPrimary": "#282a36",
     "mSecondary": "#9aedfe",
     "mOnSecondary": "#282a36",
