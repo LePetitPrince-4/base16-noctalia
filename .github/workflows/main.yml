@@ -27,13 +27,7 @@ jobs:
         with:
           path: schemes
 
-      - name: commit & push changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          rm -r schemes
-          git diff --quiet || (
-            git add . 
-            git commit -m "fix: update themes"
-            git push
-          )
+      - name: create pull request
+        run: gh pr create -B main -H auto-tinted --title 'Feat created new tinted themes' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
