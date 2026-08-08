@@ -21,21 +21,18 @@ jobs:
           # Value already defaults to true, but `persist-credentials` is required to push new commits to the repository.
           persist-credentials: true
 
-      # Other steps that change files in the repository go here
-      # …
-
-      # Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v7
-      - uses: actions/checkout@v4
-        with:
-          repository: tinted-theming/schemes
-          path: schemes
+     
 
       - name: Tinted Builder Rust
         uses: tinted-theming/tinted-builder-rust@v0.21.0
         with:
           path: schemes
-
+          
+      - name: "Update schemes"
+        run: |
+          tinted-builder-rust sync
+          tinted-builder-rust build .
+          
       - name: create Commit
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
