@@ -15,8 +15,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.head_ref }}
+          # Value already defaults to true, but `persist-credentials` is required to push new commits to the repository.
+          persist-credentials: true
 
+      # Other steps that change files in the repository go here
+      # …
+
+      # Commit all changed files back to the repository
+      - uses: stefanzweifel/git-auto-commit-action@v7
       - uses: actions/checkout@v4
         with:
           repository: tinted-theming/schemes
@@ -27,7 +36,7 @@ jobs:
         with:
           path: schemes
 
-      - name: create pull request
-        run: gh pr create -B main -H auto-tinted --title 'Feat created new tinted themes' --body 'Created by Github action'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: create Commit
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+            commit_message: creating new schemes
